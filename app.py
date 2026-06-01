@@ -74,7 +74,9 @@ st.markdown("""
 @st.cache_data(show_spinner="🍕 Loading Fine Foods dataset...")
 def load_data():
     DATA_PATH = "compressed_data.csv.gz"
-    df = pd.read_csv(DATA_PATH, compression='gzip')
+    df = pd.read_csv(DATA_PATH, compression='gzip') 
+  st.write(df.columns.tolist())
+st.stop()
 
     df['score'] = pd.to_numeric(df['score'], errors='coerce')
     df['time'] = pd.to_numeric(df['time'], errors='coerce')
