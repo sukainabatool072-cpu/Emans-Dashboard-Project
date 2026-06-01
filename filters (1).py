@@ -3,7 +3,7 @@ import numpy as np
 import gzip
 import os
 
-DATA_PATH = os.path.join("data", "finefoods.txt.gz")
+DATA_PATH = "compressed_data_csv.gz"
 
 @st.cache_data
 def load_data():
