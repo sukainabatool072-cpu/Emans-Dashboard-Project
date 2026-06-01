@@ -20,8 +20,8 @@ st.set_page_config(
 # ── Custom CSS ─────────────────────────────────────────────────
 st.markdown("""
 <style>
-    [data-testid="stAppViewContainer"] { background-color: #e8f4f8; }
-    [data-testid="stSidebar"] { background-color: #e8f5e9; }
+    [data-testid="stAppViewContainer"] { background-color: #0f1117; }
+    [data-testid="stSidebar"] { background-color: #161b22; }
     .main-title {
         font-family: 'Georgia', serif;
         font-size: 2.5rem;
