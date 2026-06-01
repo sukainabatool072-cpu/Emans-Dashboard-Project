@@ -75,22 +75,6 @@ st.markdown("""
 def load_data():
     DATA_PATH = "compressed_data.csv.gz"
     df = pd.read_csv(DATA_PATH, compression='gzip')
-    with gzip.open(DATA_PATH, 'rt', encoding='utf-8', errors='ignore') as f:
-        current = {}
-        for line in f:
-            line = line.strip()
-            if line == '':
-                if current:
-                    records.append(current)
-                    current = {}
-            elif ': ' in line:
-                key, val = line.split(': ', 1)
-                current[key] = val
-        if current:
-            records.append(current)
-
-    df = pd.DataFrame(records)
-    df.columns = df.columns.str.replace('product/', '', regex=False).str.replace('review/', '', regex=False)
 
     df['score'] = pd.to_numeric(df['score'], errors='coerce')
     df['time'] = pd.to_numeric(df['time'], errors='coerce')
