@@ -73,7 +73,7 @@ st.markdown("""
 # ── Data Loader ────────────────────────────────────────────────
 @st.cache_data(show_spinner="🍕 Loading Fine Foods dataset...")
 def load_data():
-    DATA_PATH = "data/finefoods.csv"
+    DATA_PATH = "compressed_data.csv.gz""
     df = pd.read_csv(DATA_PATH, compression='gzip')
     with gzip.open(DATA_PATH, 'rt', encoding='utf-8', errors='ignore') as f:
         current = {}
